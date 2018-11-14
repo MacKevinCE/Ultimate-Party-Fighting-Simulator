@@ -1,0 +1,31 @@
+;##########################################
+;              UBU VAGRANTE
+;##########################################
+
+[Info]
+name ="UBU VAGRANTE 3.5"              
+displayname ="Grande Mestre"       
+versiondate =12,26,2006    
+mugenversion =04,14,2001   
+author ="AIDUZZI"               
+pal.defaults =          
+
+; Files for the player
+[Files]
+cmd     =UBU.cmd   
+cns     =UBU.cns   
+st      =UBU.cns   
+stcommon =common1.cns 
+sprite  =UBU.sff   
+anim    =UBU.air   
+sound   =UBU.snd   
+pal1=UBUa.act
+pal2=UBUb.act
+pal3=UBUc.act
+pal4=UBUd.act
+pal5=UBUe.act
+pal6=UBUf.act
+st1=PALONZO.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

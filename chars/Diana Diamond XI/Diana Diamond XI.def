@@ -1,0 +1,34 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Diana Diamond"
+displayname ="Vela DeHela"
+versiondate =4/13/2008
+mugenversion =05,15,2008
+author ="Sky-79"
+pal.defaults =1,2,3,4,5
+
+[Files]
+sprite =Diana.sff
+anim =Diana.air
+sound =Diana.snd
+cmd =Diana.cmd
+cns =Diana.cns
+stcommon =common1.cns
+st =Diana.cns
+pal1=Colors\Beta3.act
+pal2=Colors\Diana1.act
+pal3=Colors\Diana2.act
+pal4=Colors\Diana3.act
+pal5=Colors\Diana4.act
+pal6=Colors\Diana5.act
+pal7=Colors\Diana6.act
+pal8=Colors\Kink1.act
+pal9=Colors\Kink2.act
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

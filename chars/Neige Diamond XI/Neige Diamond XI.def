@@ -1,0 +1,41 @@
+; Definition file for Kung Fu Man
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Neige_Pebble"
+displayname ="Fast Shirley"
+versiondate =04,14,2002
+mugenversion =04,14,2002
+author ="Zenjidoh"
+pal.defaults =6,3,4,2
+
+; Files for the player
+[Files]
+cmd		=Neige_Pebble.cmd
+cns		=Neige_Pebble.cns
+St		=Neige_Pebble.cns
+St5		= helper.cns		;
+StCommon	=common.cns
+sprite		=Neige_Pebble.sff
+anim		=Neige_Pebble.air
+sound		=Neige_Pebble.snd
+pal1=01.act
+pal2=02.act
+pal3=03.act
+pal4=04.act
+pal5=05.act
+pal6=06.act
+pal7=07.act
+pal8=11.act
+pal9=12.act
+pal10=10.act
+pal11=08.act
+pal12=09.act
+st1=Neige_Pebble_S.cns
+st2=Neige_Pebble_H.cns
+st3=Neige_Pebble_L.cns
+st4=helper.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

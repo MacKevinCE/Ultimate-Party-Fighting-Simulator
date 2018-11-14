@@ -1,0 +1,32 @@
+[Info]
+name ="Nick Fury"
+displayname ="Ze Caolho"
+versiondate =10,28,2013
+mugenversion =1.0
+author ="Arkady"
+pal.defaults =1,2,3,4,5.6
+
+[Files]
+sprite   =NickFury.sff
+anim     =NickFury.air
+sound    =NickFury.snd
+stcommon =common1.cns
+cmd      =NickFury.cmd
+cns      =NickFury.cns
+st       =basics.st
+pal1=AvX1.act
+pal2=AvX2.act
+pal3=AvX3.act
+pal4=AvX4.act
+pal5=AvX5.act
+pal6=AvX6.act
+pal7=ARMY.act
+pal8=Movie.act
+st1=specials.st
+st2=hypers.st
+st3=overrides.st
+
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

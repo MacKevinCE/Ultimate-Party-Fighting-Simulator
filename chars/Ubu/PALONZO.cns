@@ -1,0 +1,323 @@
+;Palonzo Vagrante
+[Statedef 6000]
+type = S
+physics = S
+movetype = A
+anim = 6000
+velset = 0
+juggle = 5
+ctrl = 0
+
+[State 6000, SE]   ; vai Palonzo
+type = PlaySnd
+trigger1 = time = 0
+ignorehitpause = 1
+value = 6000,1
+channel = 0
+
+[State 6000, VelSet]
+type = VelSet
+trigger1 = time > 5
+x = const(velocity.run.fwd.x) + 3
+
+[State 6000, SE]
+type = PlaySnd
+trigger1 = timemod = 23, 4;
+value = 100,0
+channel = 18
+volume = 0
+
+[State 6000, CG]
+type = ChangeState
+trigger1 = p2bodydist x = [0,55] 
+trigger1 = time > 5
+trigger2 = p2bodydist x = [0,55] 
+trigger2 = time >= 16
+value = 6001
+ctrl = 0
+
+[State 6000, CG]
+type = ChangeState
+trigger1 = p2bodydist x > 55 || p2bodydist x < 0
+trigger1 = time >= 50
+value = 6004
+ctrl = 0
+
+;---------------------------------------------------------
+;ed eccolo qui
+[Statedef 6001]
+type = S
+physics = N
+movetype = A
+juggle = 13
+anim = 6001
+ctrl = 0
+
+[State 6001, HitDef]
+type = HitDef
+triggerall = (p2stateno != [5020,5040])  
+trigger1 = p2stateno != [154,155]
+trigger1 = AnimElem = 1
+attr = S, SA
+hitflag = MAF
+animtype = Hard
+damage = 80,6     ; palonzo colpisce col musetto
+guardflag = MA
+pausetime = 9,13
+sparkno = 3
+guard.sparkno = 41
+sparkxy = -10,-55
+hitsound = 5,3
+guardsound = 6,0
+ground.type = low
+air.type = Low
+ground.velocity = -3,0
+air.velocity = -3,-4
+airguard.velocity = -3.5,-4
+ground.slidetime = 17
+ground.hittime = 17
+guard.velocity = -4
+guard.slidetime = 17
+guard.hittime = 17
+getpower = 60,20
+givepower = 60,20
+fall = ifelse(p2statetype = A,1,0)
+fall.recover = 1
+fall.recovertime = 35
+guard.ctrltime = 17
+yaccel = .55
+
+[State 6001, VelMul]
+type = velmul
+trigger1 = animelem = 1, < 4
+ignorehitpause = 1
+x = .95
+
+[State 6001, VelMul]
+type = velmul
+trigger1 = animelem = 1, >= 7
+ignorehitpause = 1
+x = .5
+
+[State 6001, CS]
+type = ChangeState
+trigger1 = animtime = 0
+value = 6002
+ctrl = 0
+
+;-----------------------------------------------------------
+;palonzo si diverte
+[Statedef 6002]
+type = S
+physics = N
+movetype = A
+velset = 0,0
+anim = 6002
+juggle = 0
+ctrl = 0
+
+[State 6002, SE]
+type = PlaySnd
+trigger1 = time = 0
+ignorehitpause = 1
+value = 6000,0;SE
+
+[State 6002, PosAdd]
+type = PosAdd
+trigger1 = Time = 0
+X = 75
+
+[State 6002, CG]
+type = ChangeState
+trigger1 = animtime = 0
+value = 6003
+ctrl = 0
+;-----------------------------------------------------------
+;palonzo fa danno
+[Statedef 6003]
+type = S
+physics = N
+movetype = A
+anim = 6003
+velset = 0,0
+ctrl = 0
+
+[State 6003, Turn]
+type = turn
+trigger1 = Time = 0
+
+[State 6003, HitDEF]
+type = HitDef
+triggerall = (p2stateno != [5020,5040])  
+trigger1 = p2stateno != [154,155]
+trigger1 = AnimElem = 1
+attr = S, SA
+hitflag = MAF
+animtype = Hard
+damage = 105,25                  ; palonzo colpisce ma anche grabba
+guardflag = MA
+pausetime = 50,55
+sparkno = 3
+guard.sparkno = 41
+sparkxy = -10,-55
+hitsound = 5,3
+guardsound = 6,0
+ground.type = high
+air.type = Low
+ground.velocity = -5,0
+air.velocity = -3,-4
+airguard.velocity = -3.5,-4
+ground.slidetime = 17
+ground.hittime = 17
+guard.velocity = -4
+guard.slidetime = 17
+guard.hittime = 17
+getpower = 60,20
+givepower = 60,20
+fall = ifelse(p2statetype = A,1,0)
+fall.recover = 1
+fall.recovertime = 35
+guard.ctrltime = 17
+yaccel = .55
+
+[State 6003, SE]
+type = PlaySnd
+trigger1 = time = 0
+ignorehitpause = 1
+value = 6000,2
+
+[State 6003, SE]
+type = PlaySnd
+trigger1 = animelem = 1
+ignorehitpause = 1
+value = 210,1;SE
+
+[State 6003, CS]
+type = ChangeState
+trigger1 = animtime = 0
+trigger1 = roundstate != 2
+value = 6006
+
+[State 6003, CS]
+type = ChangeState
+trigger1 = animtime = 0
+trigger1 = roundstate = 2
+value = 6004
+ctrl = 1
+
+;-----------------------------------------------------------
+;saluta e se ne va
+[Statedef 6004]
+type = S
+physics = N
+movetype = I
+anim = 6004
+velset = 0,0
+ctrl = 0
+
+[State 6004, Turn]
+type = Turn
+trigger1 = 1
+trigger1 = p2dist X < -15
+
+[State 6004, CS]
+type = ChangeState
+trigger1 = animtime = 0
+trigger1 = roundstate = 2
+value = 6005
+
+[State 6004, CS]
+type = ChangeState
+trigger1 = animtime = 0
+trigger1 = roundstate != 2
+value = 6006
+
+;-----------------------------------------------------------
+;arrivederci palonzo
+[Statedef 6005]
+type = S
+physics = N
+movetype = I
+anim = 6005
+velset = 0,0
+ctrl = 0
+
+[State 6005, SE]
+type = PlaySnd
+trigger1 = time = 2
+ignorehitpause = 1
+value = 6000,0;SE
+
+[State 6005, DS]
+type = DestroySelf
+trigger1 = animtime = 0
+
+;-------------------------
+;benrimasto palonzo
+[statedef 6006]
+type = S
+movetype = I
+valset = 0,0
+physics = S
+anim = 6004
+
+[state 6006,VelSet]
+type = velset
+trigger1 = time = 0
+x = 0
+y = 0
+
+[state 6006, Posset]
+type = posset
+trigger1 = time = 0
+y = 0
+
+[State 6006, CS]
+type = ChangeState
+trigger1 = roundstate = 4
+value = 6007
+
+;-------------------------
+;ma che ci faccio io qui
+[statedef 6007]
+type = S
+movetype = I
+valset = 0,0
+physics = S
+anim = 6006
+
+[State 6007, VR]
+type = VarRandom
+trigger1 = Time = 0
+v = 30
+range = 0,2
+
+[state 6007, VS]
+type = velset
+trigger1 = time = 0
+x = 0
+y = 0
+
+[state 6007, PS]
+type = posset
+trigger1 = time = 0
+y = 0
+
+[State 6007, SE]
+type = playsnd
+trigger1 = Var(30) = 0
+trigger1 = time = 1
+value = 6000,3
+
+[State 6007, SE]
+type = playsnd
+trigger1 = Var(30) = 1
+trigger1 = Time = 1
+value = 6000,4
+
+[State 6007, SE]
+type = playsnd
+trigger1 = Var(30) = 2
+trigger1 = Time = 1
+value = 6000,5
+volume = -40

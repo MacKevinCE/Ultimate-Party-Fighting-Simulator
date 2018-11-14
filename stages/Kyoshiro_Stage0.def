@@ -1,0 +1,134 @@
+;========================================================
+;
+;version: 30 juin 2008 
+;auteur : "ROCKZOUH"
+;stage de "Kyoshiro Mibu" de "samurai deeper kyo"
+;
+;========================================================
+[Info]
+name = "Kyoshiro Stage"
+
+;========================================================
+[Camera]
+startx = 0
+starty = 0
+boundleft = -160
+boundright = 160
+boundhigh = -16
+boundlow = 0
+verticalfollow = .2
+floortension = 0
+tension = 50
+
+;========================================================
+[PlayerInfo]
+p1startx = -70         
+p1starty = 0           
+p1startz = 0         
+p1facing = 1         
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+leftbound  = -1000 
+rightbound =  1000 
+topbound  =  0
+botbound  =  0 
+;========================================================
+[Scaling]
+topz     = 0 
+botz     = 50     
+topscale = 1      
+botscale = 1.2    
+
+;========================================================
+[Bound]
+screenleft = 20 
+screenright = 20  
+
+;========================================================
+[StageInfo]
+zoffset = 223
+autoturn = 1
+resetBG = 1
+
+;========================================================
+[Shadow]
+color = 256,256,256
+yscale = 0.2
+reflect = 1
+
+;========================================================
+[Music]
+bgmusic = sound/kyoshiro.mp3
+bgvolume = 0
+
+;========================================================
+[BGdef]
+spr = Kyoshiro_Stage0.sff
+debugbg = 0
+
+;========================================================
+;arriere plan
+[BG 0]
+type = normal
+spriteno = 0,0 
+layerno = 0
+start = -320,-16
+delta = 1,1
+mask =1
+
+;========================================================
+;premier plan
+[BG 1]
+type = normal
+spriteno = 1,0 
+layerno = 0
+start = -320,-16
+delta = 1,1
+mask =1
+
+;========================================================
+;éclairages
+[BG 2]
+type  = Anim
+Actionno = 2 
+layerno = 0
+start = -320,-16
+delta = 1,1
+mask =1
+
+[Begin Action 2]
+2, 0, 0, 0, 3
+2, 1, 0, 0, 3
+2, 2, 0, 0, 3
+2, 3, 0, 0, 3
+2, 4, 0, 0, 3
+2, 5, 0, 0, 3
+2, 6, 0, 0, 3
+2, 7, 0, 0, 3
+2, 8, 0, 0, 3
+2, 7, 0, 0, 3
+2, 6, 0, 0, 3
+2, 5, 0, 0, 3
+2, 4, 0, 0, 3
+2, 3, 0, 0, 3
+2, 2, 0, 0, 3
+2, 1, 0, 0, 3
+
+;========================================================
+
+;brouillard
+[BG 3]
+type = normal
+spriteno = 3,0 
+layerno = 1
+start = -320,-16
+delta = 1,1
+mask =1
+trans = add
+velocity = 1,0
+tile = 1,0
+
+;========================================================

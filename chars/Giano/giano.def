@@ -1,0 +1,33 @@
+;##########################################
+;              giano
+;##########################################
+
+[Info]
+name ="Giano"              
+displayname ="Ze Caolho"       
+versiondate =12,26,2006    
+mugenversion =1.0   
+author ="AIDUZZI & YukiWT"
+pal.defaults =1,2,3,4,5,6,7
+
+; Files for the player
+[Files]
+cmd     =giano.cmd
+;cmd    = stupidkuando.cmd 
+cns     =giano.cns   
+st      =giano.cns   
+stcommon =common1.cns 
+sprite  =giano.sff   
+anim    =giano.air   
+sound   =giano.snd   
+pal1=gianob.act
+pal2=gianoa.act
+pal3=gianoc.act
+pal4=gianod.act
+pal5=gianoe.act
+pal6=gianof.act
+pal7=gianog.act
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=
